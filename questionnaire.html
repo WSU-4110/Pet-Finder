@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>Pet&ndash;Finder</title>
+    <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="grids-responsive-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: #9FE5FF;">
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Pet Finder</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link">Questionnaire</a></li>
+			<li class="pure-menu-item"><a href="browse.html" class="pure-menu-link">Browse</a></li>
+            <li class="pure-menu-item"><a href="signup.html" class="pure-menu-link">Sign Up</a></li>
+			<li class="pure-menu-item"><a href="signin.html" class="pure-menu-link">Sign In</a></li>
+        </ul>
+    </div>
+</div>
+
+<div>
+        <br><br><h2 class="content-head is-center"><b>Questionnaire</b></h2>
+                <form>
+                    <div class="is-center">
+                        <label for="zipC">Zip Code:</label>
+						<input type="text" id="zipC" style="width: 6%;"><br><br>
+						
+						<label>Are you looking for a cat or dog?</label>
+						<input type="radio" id="catdog" name="pet"> Cat</input>
+						<input type="radio" id="catdog" name="pet"> Dog</input><br><br>
+						
+						<label>How many rooms are there where you live?</label>
+						<input type="number" id="roomsNum" step="1" value="1" style="width: 3%;"><br><br>
+						
+						<label>Check the following that best describes the kind of pet you'd wnat to own: </label><br>
+						<input type="checkbox" id="personality"> Active</input>
+						<input type="checkbox" id="personality"> Brisk</input>
+						<input type="checkbox" id="personality"> Eccentric</input><br>
+						<input type="checkbox" id="personality"> Jolly</input>
+						<input type="checkbox" id="personality"> Calm</input>
+						<input type="checkbox" id="personality"> Fearless</input><br><br>
+						
+						<button type="submit" class="pure-button">Submit</button>
+					</div>
+                </form>
+</div>
+	
+<div>
+	
+    <div class="footer l-box is-center">
+        CSC 4110/1 Group Project - Pet Finder
+    </div>
+
+</div>
+
+</body>
+</html>
