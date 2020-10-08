@@ -1,0 +1,32 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ context.title }}</title>
+    
+    {% include "app/styles.html" %}
+    
+    {% block styles2 %}
+    {% endblock %}
+
+</head>
+<body>
+
+    {% include "app/top-menu.html" %}
+
+	{% csrf_token %}
+	{% block content_wrapper %}
+	{% endblock %}
+
+
+	{% include "app/plugins.html" %}
+
+	{% block js_plugins2 %}
+	{% endblock %}
+
+</body>
+</html>

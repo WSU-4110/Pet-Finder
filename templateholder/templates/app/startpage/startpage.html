@@ -1,0 +1,69 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Pet-Finder</h1>
+        <p>
+            <a href="{% url 'login_manager:register_page' %}" class="pure-button pure-button-primary">Get Started</a>
+        </p>
+        <h2 class="splash-subhead">
+            Scroll Down for More Details
+        </h2>
+    </div>
+</div>
+
+<div class="content-wrapper" style="background: #9FE5FF;">
+    <div>
+        <h2 class="is-center">Common Questions</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    What is this for?
+                </h3>
+                <h4>
+                    This is for users to easily search for their preferred breed of cats and/or dogs they are looking to adopt
+                </h4>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    How to filter the search?
+                </h3>
+                <h4>
+                    The questionnaire page serves as a way for users to filter the cat/dog search results, they answer based on personality, living conditions, and their wants.
+                </h4>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-server"></i>
+                    Where to view all pets?
+                </h3>
+                <h4>
+                    Users can also browse our database, which contains descpriptions of specific cat/dog breeds and where they can adopt them.
+                </h4>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-user"></i>
+                    Why Sign up?
+                </h3>
+                <h4>
+                    Signing up grants the user the ability to add animal breeds to the database, this is mainly for adoption agencies to use.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="footer l-box is-center">
+        CSC 4110/1 Group Project - Pet Finder
+    </div>
+
+</div>
+
+{% endblock %}

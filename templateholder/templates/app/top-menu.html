@@ -1,0 +1,16 @@
+{% load static %}
+
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="{% url 'startpage:home' %}">Pet Finder</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{% url 'startpage:home' %}" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Questionnaire</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Browse</a></li>
+                <li class="pure-menu-item"><a href="{% url 'login_manager:register_page' %}" class="pure-menu-link">Sign Up</a></li>
+                <li class="pure-menu-item"><a href="{% url 'login_manager:login_page' %}" class="pure-menu-link">Sign In</a></li>
+            </ul>
+        </div>
+    </div>
