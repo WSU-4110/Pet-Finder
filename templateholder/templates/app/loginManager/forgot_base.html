@@ -1,0 +1,31 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>{{ context.title }}</title>
+{% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/login_style.scss" %}" />
+{% endcompress %}
+
+</head>
+<body>
+  
+<form  method="post">
+	{% csrf_token %}
+  <h1>Forgot Password</h1>
+  {{ formset.management_form }}
+  {% for form in formset %}
+    {% for field in form %}
+    <p style="padding:15px;padding-left:20px;margin-bottom:-25px;">Enter Email Below</p>
+  		{{ field }}
+	{% endfor %}
+  {% endfor %}
+  <button type="submit">Submit</button>
+  <button type="submit" style="margin-top:15px;">Need an account?<br> Sign Up!</button>
+</form> 
+
+
+</body>
