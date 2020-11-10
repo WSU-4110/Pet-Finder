@@ -4,19 +4,9 @@ from django.contrib.auth.models import User
 from .models import *
 
 
-class updateUserProfileForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name',)
-        widgets = {
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
-        }
-
-
 class updateProfileForm(forms.ModelForm):
     class Meta:
-        model = Profile
+        model = Questions
         fields = ('phoneNumber', 'about', 'zip', 'address', 'city', 'state')
         widgets = {
             'phoneNumber': forms.TextInput(attrs={'placeholder': 'Phone'}),

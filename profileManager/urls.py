@@ -3,8 +3,8 @@ from django.urls import path
 
 from . import views
 
-app_name='profileManager'
+app_name = 'profileManager'
 urlpatterns = [
-	path('', views.profile, name='profile'),
+    path('', views.profile, name='profile'),
     path('updateProfile', views.updateProfile, name='updateProfile'),
 ]
