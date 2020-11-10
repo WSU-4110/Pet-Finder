@@ -1,148 +1,91 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head>						<!-- Initialize head content & external links -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
     <title>Pet&ndash;Finder</title>
-    <link rel="stylesheet" href="pure-min.css">
-    <link rel="stylesheet" href="grids-responsive-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background: #9FE5FF;">
-
-<div class="header">
+<body style="background: #9FE5FF;"> <!-- Body Content -->
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="">Pet Finder</a>
-
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link">Questionnaire</a></li>
-			<li class="pure-menu-item"><a href="browse.html" class="pure-menu-link">Browse</a></li>
-            <li class="pure-menu-item"><a href="signup.html" class="pure-menu-link">Sign Up</a></li>
-			<li class="pure-menu-item"><a href="signin.html" class="pure-menu-link">Sign In</a></li>
+        <a class="pure-menu-heading" href="index.html">Pet Finder</a>
+        <ul class="pure-menu-list"> <!-- Links to other pages -->
+            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link"><b>Home</b></a></li>
+            <li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link"><b>Questionnaire</b></a></li>
+			<li class="pure-menu-item"><a href="browse.html" class="pure-menu-link"><b>Browse</b></a></li>
+            <li class="pure-menu-item"><a href="signup.html" class="pure-menu-link"><b>Sign Up</b></a></li>
+			<li class="pure-menu-item"><a href="signin.html" class="pure-menu-link"><b>Sign In</b></a></li>
+			<li class="pure-menu-item"><a href="profile.html" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
         </ul>
     </div>
-</div>
-
-    <div>
-        <br><br><h1 class="content-head is-center"><b>Browse</b></h1>
-        <div>
-            <div>
-                <form>
-                    <div class="content-head is-center">
-					<input type="text" placeholder="Search.." name="search">
-					<button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-				</div>
-            </div>     
-        </div>
-    </div>
 	
-	<div>
-           <div class="is-center">
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Dog 1
-                </h3>
+    <br><br><h1 class="is-center"><b>Browse</b></h1> <!-- Browse Function -->
+        <form>
+            <div class="content-head is-center">
+				<input type="text" placeholder="Search.." name="search">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</div>
+        </form>  
+		
+    <div class="is-center">			<!-- Browse Content -->
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Dog 1</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
 			
-			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Dog 2
-                </h3>
+		<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Dog 2</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
 			
-			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Dog 3
-                </h3>
+		<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Dog 3</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
 			
-			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Cat 1
-                </h3>
+		<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Cat 1</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
 			
-			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Cat 2
-                </h3>
+		<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Cat 2</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
 			
-			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    Cat 3
-                </h3>
+		<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+			<h3 class="content-subhead">Cat 3</h3>
                 <h4>
                     (Description)
                 </h4>
-				<h4>
-                    Location
-                </h4>
-				<h4>
-                    (Tags)
-                </h4>
-            </div>
-		</div>
+				<h4>Location</h4>
+				<h4>(Tags)</h4>
+        </div>
+	</div>
+	
     <div class="footer l-box is-center">
         CSC 4110/1 Group Project - Pet Finder
     </div>
-
-</div>
-
 </body>
 </html>

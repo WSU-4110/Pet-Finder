@@ -1,16 +1,14 @@
 {% load static %}
 
-
-    <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <a class="pure-menu-heading" href="{% url 'startpage:home' %}">Pet Finder</a>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="{% url 'startpage:home' %}" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Questionnaire</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Browse</a></li>
-                <li class="pure-menu-item"><a href="{% url 'login_manager:register_page' %}" class="pure-menu-link">Sign Up</a></li>
-                <li class="pure-menu-item"><a href="{% url 'login_manager:login_page' %}" class="pure-menu-link">Sign In</a></li>
+                <li class="pure-menu-item"><a href="{% url 'startpage:home' %}" class="pure-menu-link"><b>Home</b></a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><b>Questionnaire</b></a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><b>Browse</b></a></li>
+                <li class="pure-menu-item"><a href="{% url 'login_manager:register_page' %}" class="pure-menu-link"><b>Sign Up</b></a></li>
+                <li class="pure-menu-item"><a href="{% url 'login_manager:login_page' %}" class="pure-menu-link"><b>Sign In</b></a></li>
+				<li class="pure-menu-item"><a href="{% url 'profileManager:profile' %}" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
             </ul>
         </div>
-    </div>

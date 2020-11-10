@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>						<!-- Initialize head content & external links -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet&ndash;Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: #9FE5FF;"> <!-- Body Content -->
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="index.html">Pet Finder</a>
+        <ul class="pure-menu-list"> <!-- Links to other pages -->
+            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link"><b>Home</b></a></li>
+            <li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link"><b>Questionnaire</b></a></li>
+			<li class="pure-menu-item"><a href="browse.html" class="pure-menu-link"><b>Browse</b></a></li>
+            <li class="pure-menu-item"><a href="signup.html" class="pure-menu-link"><b>Sign Up</b></a></li>
+			<li class="pure-menu-item"><a href="signin.html" class="pure-menu-link"><b>Sign In</b></a></li>
+			<li class="pure-menu-item"><a href="profile.html" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
+        </ul>
+    </div><br><br>
+
+    <h1 class="is-center"><b>Edit Profile</b></h1>
+            <div class="content pure-u-1 is-center">
+                <form class="pure-form">
+                    <div class="formC">
+						<label>First Name:</label><br>
+                        <input type="text" style="width: 10%;"><br>
+						<label>Last Name:</label><br>
+                        <input type="text" style="width: 10%;"><br>
+						<label>Agency Location:</label><br>
+                        <input type="text" style="width: 25%;"><br>
+						<label>About Me:</label><br>
+						<textarea rows="5" cols="65" placeholder="Enter Description..." maxlength="500"></textarea><br>
+						<label>Contact Info:</label><br>
+                        <input type="text" style="width: 15%;"><br>
+						<h1><b>Change Profile Icon</b></h1>
+							<div class="dropdown">
+								<button class="dropB" style="pointer-events: none;"><i class="fa fa-user-circle"></i></button>
+									<div class="dropdown-icons">
+										<a><img src="flower_icon.png"></a>
+										<a><img src="city_icon.png"></a>
+										<a><img src="space_icon.png"></a>
+										<a><img src="water_icon.png"></a>
+										<a><img src="grass_icon.png"></a>
+									</div>
+							</div><br>
+						<button class="pure-button"><a href="profile.html" style="text-decoration: none; color: white;">Cancel</a></button>
+						<button type="submit" class="pure-button">Save</button>
+					</div>
+                </form>
+            </div>     
+
+    <div class="footer l-box is-center">
+        CSC 4110/1 Group Project - Pet Finder
+    </div>
+</body>
+</html>

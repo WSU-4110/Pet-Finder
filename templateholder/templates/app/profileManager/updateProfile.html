@@ -1,0 +1,39 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+<div style="background: #9FE5FF;">
+	<h1 class="is-center"><b>Edit Profile</b></h1>
+            <div class="content pure-u-1 is-center">
+                <form class="pure-form">
+                    <div class="formC">
+						{% csrf_token %}
+						{{ formset.management_form }}
+						{% for form in formset %}
+							{% for field in form %}
+							{{ field }}
+							{% endfor %}
+						{% endfor %}
+						
+						<h1><b>Change Profile Icon</b></h1>
+							<div class="dropdown">
+								<button class="dropB" style="pointer-events: none;"><i class="fa fa-user-circle"></i></button>
+									<div class="dropdown-icons">
+										<a><img src="{% static 'img/flower_icon.png' %}"></a>
+										<a><img src="{% static 'img/city_icon.png' %}"></a>
+										<a><img src="{% static 'img/space_icon.png' %}"></a>
+										<a><img src="{% static 'img/water_icon.png' %}"></a>
+										<a><img src="{% static 'img/grass_icon.png' %}"></a>
+									</div>
+							</div><br>
+						<button class="pure-button"><a href="{% url 'profileManager:profile' %}" style="text-decoration: none; color: white;">Cancel</a></button>
+						<button type="submit" class="pure-button">Save</button><br>
+					</div>
+                </form>
+            </div>
+</div>
+		<div class="footer l-box is-center">
+			CSC 4110/1 Group Project - Pet Finder
+		</div>
+
+{% endblock %}
