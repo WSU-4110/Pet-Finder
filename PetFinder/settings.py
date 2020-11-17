@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'templateholder.apps.TemplateholderConfig',
     'startpage.apps.StartpageConfig',
     'profileManager.apps.ProfilemanagerConfig',
+    'questionnaireManager.apps.QuestionnaireConfig',
 ]
 
 MIDDLEWARE = [
