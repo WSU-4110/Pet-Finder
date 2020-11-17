@@ -19,22 +19,37 @@
 			<li class="pure-menu-item"><a href="profile.html" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
         </ul>
     </div><br><br>
-									<!-- Sign In Content -->
-    <h1 class="is-center"><b>Member Login:</b></h1>
-        <div class="pure-u-1">
-                <form class="pure-form pure-form-stacked">
-                    <div class="formC"><fieldset>
-                        <label for="email"><i class="fa fa-envelope"></i> Email:</label>
-                        <input id="email" type="email" placeholder="Email">
 
-                        <label for="password"><i class="fa fa-lock"></i> Password:</label>
-                        <input id="password" type="password" placeholder="Password">
-
-                        <button type="submit" class="pure-button">Sign In</button>
-                    </fieldset>
+    <h1 class="is-center"><b>Edit Profile</b></h1>
+            <div class="content pure-u-1 is-center">
+                <form class="pure-form">
+                    <div class="formC">
+						<label>First Name:</label><br>
+                        <input type="text" style="width: 10%;"><br>
+						<label>Last Name:</label><br>
+                        <input type="text" style="width: 10%;"><br>
+						<label>Agency Location:</label><br>
+                        <input type="text" style="width: 25%;"><br>
+						<label>About Me:</label><br>
+						<textarea rows="5" cols="65" placeholder="Enter Description..." maxlength="500"></textarea><br>
+						<label>Contact Info:</label><br>
+                        <input type="text" style="width: 15%;"><br>
+						<h1><b>Change Profile Icon</b></h1>
+							<div class="dropdown">
+								<button class="dropB" style="pointer-events: none;"><i class="fa fa-user-circle"></i></button>
+									<div class="dropdown-icons">
+										<a><img src="images/flower_icon.png"></a>
+										<a><img src="images/city_icon.png"></a>
+										<a><img src="images/space_icon.png"></a>
+										<a><img src="images/water_icon.png"></a>
+										<a><img src="images/grass_icon.png"></a>
+									</div>
+							</div><br>
+						<button class="pure-button"><a href="profile.html" style="text-decoration: none; color: white;">Cancel</a></button>
+						<button type="submit" class="pure-button">Save</button><br><br>
 					</div>
                 </form>
-        </div>     
+            </div>     
 
     <div class="footer l-box is-center">
         CSC 4110/1 Group Project - Pet Finder

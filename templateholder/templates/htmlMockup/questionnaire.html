@@ -22,29 +22,24 @@
 
 	<div>
         <br><br><h1 class="is-center"><b>Questionnaire</b></h1> <!-- Questionnaire Content -->
-                <form>
-                    <div class="is-center">
-                        <label for="zipC">Zip Code:</label>
-						<input type="text" id="zipC" style="width: 6%;"><br><br>
-						
+                <form action="questionnaire/results.php" method="get">
+					<div class="is-center">
+						<label>Zip Code:</label>
+						<input type="text" name="zip" id="zipC" style="width: 6%;"><br><br>
 						<label>Are you looking for a cat or dog?</label>
-						<input type="radio" id="catdog" name="pet"> Cat</input>
-						<input type="radio" id="catdog" name="pet"> Dog</input><br><br>
-						
+						<input type="radio" name="animal" id="catdog" value="cat"> Cat</input>
+						<input type="radio" name="animal" id="catdog" value="dog"> Dog</input><br><br>
 						<label>How many rooms are there where you live?</label>
-						<input type="number" id="roomsNum" step="1" value="1" style="width: 3%;"><br><br>
-						
+						<input type="number" name="rooms" id="roomsNum" step="1" value="1" style="width: 3%;"><br><br>
 						<label>Check the following that best describes the kind of pet you'd want to own: </label><br>
-						<input type="checkbox" id="personality"> Active</input>
-						<input type="checkbox" id="personality"> Brisk</input>
-						<input type="checkbox" id="personality"> Eccentric</input><br>
-						<input type="checkbox" id="personality"> Jolly</input>
-						<input type="checkbox" id="personality"> Calm</input>
-						<input type="checkbox" id="personality"> Fearless</input><br><br>
-						
-						<button type="submit" class="pure-button">Submit</button>
+						<input type="checkbox" name="trait[]" id="personality" value="Active"> Active</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Brisk"> Brisk</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Eccentric"> Eccentric</input><br>
+						<input type="checkbox" name="trait[]" id="personality" value="Jolly"> Jolly</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Calm"> Calm</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Fearless"> Fearless</input><br><br>
+						<input type="submit" value="submit">
 					</div>
-                </form>
 	</div>
 	
 	<div class="footer l-box is-center">
