@@ -1,20 +1,20 @@
 <?php
-   /*$server = "localhost";
-   $userName = 
+   /* $server = "localhost";
+   $login = 
    $pass = 
-   $db = */
+   $database = */
    
 function get_profile_info() {
-    global $server, $userName, $pass, $db;
+    global $server, $login, $pass, $database;
        
-    $con=mysqli_connect($server,$userName,$pass,$db);
+    $connection=mysqli_connect($server,$login,$pass,$database);
     if (mysqli_connect_errno()){
         echo "Connection to MySQL unsuccessful: " . mysqli_connect_error();
         die();
     }
-    $result = mysqli_query($con,"SELECT * FROM PROFILE;");
-    $data=array();
-    while($row = mysqli_fetch_array($result)){
+    $columns = mysqli_query($connection,"SELECT * FROM PROFILE;");
+    $values=array();
+    while($row = mysqli_fetch_array($columns)){
         $temp = array();
 		array_push($temp,$row['User']);
 		array_push($temp,$row['FirstName']);
@@ -23,23 +23,23 @@ function get_profile_info() {
 		array_push($temp,$row['State']);
 		array_push($temp,$row['Phone']);
 		array_push($temp,$row['AboutMe']);
-        array_push($data,$temp);
+        array_push($values,$temp);
     }
-    mysqli_close($con);
-    return $data;
+    mysqli_close($connection);
+    return $values;
 }
  
 function update_profile_info($arg_user, $arg_first, $arg_last, $arg_address, $arg_state, $arg_phone, $arg_aboutMe) {
-    global $server, $userName, $pass, $db;
+    global $server, $login, $pass, $database;
        
-    $con=mysqli_connect($server,$userName,$pass,$db);
+    $connection=mysqli_connect($server,$login,$pass,$database);
     if (mysqli_connect_errno()){
         echo "Connection to MySQL unsuccessful: " . mysqli_connect_error(); 
         die();
     }
-    $stmt = mysqli_prepare($con, "UPDATE PROFILE SET FirstName=?, LastName=?, Address=?, State=?, Phone=?, AboutMe=?  WHERE user=?;");
-    mysqli_stmt_bind_param($stmt,"sssssss", $arg_first, $arg_last, $arg_address, $arg_state, $arg_phone, $arg_aboutMe, $arg_user);
-    mysqli_stmt_execute($stmt);
-    mysqli_close($con);
+    $statement = mysqli_prepare($connection, "UPDATE PROFILE SET FirstName=?, LastName=?, Address=?, State=?, Phone=?, AboutMe=?  WHERE user=?;");
+    mysqli_stmt_bind_param($statement,"sssssss", $arg_first, $arg_last, $arg_address, $arg_state, $arg_phone, $arg_aboutMe, $arg_user);
+    mysqli_stmt_execute($statement);
+    mysqli_close($connection);
 }
 ?>

@@ -3,42 +3,42 @@
 <head>						<!-- Initialize head content & external links -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet&ndash;Finder</title>
+    <title>Questionnaire</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="background: #9FE5FF;"> <!-- Body Content -->
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="index.html">Pet Finder</a>
-        <ul class="pure-menu-list"> <!-- Links to other pages -->
-            <li class="pure-menu-item"><a href="index.html" class="pure-menu-link"><b>Home</b></a></li>
-            <li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link"><b>Questionnaire</b></a></li>
+		<ul class="pure-menu-list"> <!-- Links to other pages -->
+			<li class="pure-menu-item"><a href="index.html" class="pure-menu-link"><b>Home</b></a></li>
+			<li class="pure-menu-item"><a href="questionnaire.html" class="pure-menu-link"><b>Questionnaire</b></a></li>
 			<li class="pure-menu-item"><a href="browse.html" class="pure-menu-link"><b>Browse</b></a></li>
-            <li class="pure-menu-item"><a href="signup.html" class="pure-menu-link"><b>Sign Up</b></a></li>
+			<li class="pure-menu-item"><a href="signup.html" class="pure-menu-link"><b>Sign Up</b></a></li>
 			<li class="pure-menu-item"><a href="signin.html" class="pure-menu-link"><b>Sign In</b></a></li>
 			<li class="pure-menu-item"><a href="profile.php" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
-        </ul>
+		</ul>
     </div>
 
 	<div>
         <br><br><h1 class="is-center"><b>Questionnaire</b></h1> <!-- Questionnaire Content -->
                 <form action="questionnaire/results.php" method="get">
 					<div class="is-center">
-						<label>Zip Code:</label>
+						<label><h3>Zip Code:</h3></label>
 						<input type="text" name="zip" id="zipC" style="width: 6%;"><br><br>
-						<label>Are you looking for a cat or dog?</label>
-						<input type="radio" name="animal" id="catdog" value="cat"> Cat</input>
-						<input type="radio" name="animal" id="catdog" value="dog"> Dog</input><br><br>
-						<label>How many rooms are there where you live?</label>
+						<label><h3>Are you looking for a cat or dog?</h3></label>
+						<input type="radio" name="animal" id="catdog" value="cat"><b> Cat</b></input>
+						<input type="radio" name="animal" id="catdog" value="dog"><b> Dog</b></input><br><br>
+						<label><h3>How many rooms are there where you live?</h3></label>
 						<input type="number" name="rooms" id="roomsNum" step="1" value="1" style="width: 3%;"><br><br>
-						<label>Check the following that best describes the kind of pet you'd want to own: </label><br>
-						<input type="checkbox" name="trait[]" id="personality" value="Active"> Active</input>
-						<input type="checkbox" name="trait[]" id="personality" value="Brisk"> Brisk</input>
-						<input type="checkbox" name="trait[]" id="personality" value="Eccentric"> Eccentric</input><br>
-						<input type="checkbox" name="trait[]" id="personality" value="Jolly"> Jolly</input>
-						<input type="checkbox" name="trait[]" id="personality" value="Calm"> Calm</input>
-						<input type="checkbox" name="trait[]" id="personality" value="Fearless"> Fearless</input><br><br>
-						<input type="submit" value="submit">
+						<label><h3>Check the following that best describes the kind of pet you'd want to own: </h3></label><br>
+						<input type="checkbox" name="trait[]" id="personality" value="Active"><b> Active</b>&nbsp;&nbsp;&nbsp;</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Brisk"><b> Brisk</b>&nbsp;&nbsp;&nbsp;</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Eccentric"><b> Eccentric</b>&nbsp;&nbsp;&nbsp;</input><br>
+						<input type="checkbox" name="trait[]" id="personality" value="Jolly"><b> Jolly</b>&nbsp;&nbsp;&nbsp;</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Calm"><b> Calm</b>&nbsp;&nbsp;&nbsp;</input>
+						<input type="checkbox" name="trait[]" id="personality" value="Fearless"><b> Fearless</b>&nbsp;&nbsp;&nbsp;</input><br><br>
+						<input type="submit" class="pure-button" value="Submit">
 					</div>
 	</div>
 	

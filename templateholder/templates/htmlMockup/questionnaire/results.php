@@ -25,17 +25,17 @@
 			$zip = $_GET['zip'];
 			$pet = $_GET['animal'];
 			$rooms = $_GET['rooms'];
-			echo "Entered Zip Code: <br>";
-			echo $zip."<br><br>";
-			echo "Selected Animal: <br>";
-			echo $pet."<br><br>";
-			echo "Number of Rooms Entered: <br>";
-			echo $rooms."<br><br>";
-			echo "Selected Pet Personalities: <br>";
+			echo "<h2><b>" . "Entered Zip Code: " . "</b></h2><br>";
+			echo '<div style="background-color: white; width: 10%; margin-left: auto; margin-right: auto;">' . "<h3>" . $zip . "</h3></div>" . "<br>";
+			echo "<h2><b>" . "Selected Animal: " . "</b></h2><br>";
+			echo '<div style="background-color: white; width: 10%; margin-left: auto; margin-right: auto;">' . "<h3>" . $pet . "</h3></div>" . "<br>";
+			echo "<h2><b>" . "Number of Rooms Entered: " . "</b></h2><br>";
+			echo '<div style="background-color: white; width: 10%; margin-left: auto; margin-right: auto;">' . "<h3>" . $rooms . "</h3></div>" . "<br>";
+			echo "<h2><b>" . "Selected Pet Personalities: " . "</b></h2><br>";
 			foreach ($trait as $personality){ 
-				echo $personality."<br />";
+			echo '<div style="background-color: white; width: 10%; margin-left: auto; margin-right: auto;">' . "<h3>" . $personality . "</h3></div>";
 			}
-			echo "<br>";
+			echo "<br><br><br>";
 		?>
 	</div>
 	<div class="footer l-box is-center">
