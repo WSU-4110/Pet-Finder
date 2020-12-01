@@ -10,7 +10,6 @@ from django.conf import settings
 # Create your views here.
 def home(request, error=None, info=None, success=None, warning=None):
 	context = {'title':'Home'}
-	logout(request)
 	if error:
 		context['error'] = str(error)
 	if info:
