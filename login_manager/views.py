@@ -22,7 +22,10 @@ def login_page(request, error=None, info=None, success=None, warning=None):
 		context['warning'] = str(warning)
 	if success:
 		context['success'] = str(success)
-	return render(request, 'app/loginManager/login_base.html', {'context': context, 'formset': LoginForm(auto_id=False)})
+	return render(request, 'app/loginManager/login_base.html', {'context': context, 'formset': LoginForm(auto_id=False)}), "login page loaded"
+
+def test_login_page(request):
+	assert login_page(request) == 'login page loaded'
 
 #renders our register page
 def register_page(request, error=None, info=None, success=None, warning=None, form=None):
@@ -37,7 +40,10 @@ def register_page(request, error=None, info=None, success=None, warning=None, fo
 		context['success'] = str(success)
 	if form:
 		return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': RegisterForm, 'form': form})
-	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': RegisterForm})
+	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': RegisterForm}), "register page loaded"
+
+def test_register_page(request):
+	assert register_page(request) == 'register page loaded'
 
 #logins in our user
 def login_user(request):
@@ -52,7 +58,7 @@ def login_user(request):
 				login(request, user) #sets it into session data the logged in user
 				if form.cleaned_data['remember_me']:
 					settings.SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-				return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page'))
+				return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page')), "logged in"
 			else:
 				error = "User doesn't exist or invalid password"
 				return login_page(request, error)
@@ -60,6 +66,9 @@ def login_user(request):
 			error = "Form isn't valid"
 			return login_page(request, error)
 	return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page'))
+
+def test_login_user(request):
+	assert login_user(request) == 'logged in'
 
 	# renders our login page
 def forgot_user(request, error=None, info=None, success=None, warning=None, form=None):
@@ -75,4 +84,7 @@ def forgot_user(request, error=None, info=None, success=None, warning=None, form
 		context['success'] = str(success)
 	if form:
 		return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm, 'form': form})
-	return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm})
+	return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm}), "success"
+
+def test_forgot_user(request):
+	assert forgot_user(request) == 'success'
