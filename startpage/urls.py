@@ -6,4 +6,5 @@ from . import views
 app_name='startpage'
 urlpatterns = [
 	path('', views.home, name='home'),
+	path('view-pet', views.petview, name='petview'),
 ]
