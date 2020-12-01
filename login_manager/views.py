@@ -8,6 +8,8 @@ from django.contrib.auth.models import User, Group
 from django.conf import settings
 
 from .forms import *
+from profileManager.forms import *
+from profileManager.models import *
 from . import utils
 
 # renders our login page
@@ -22,6 +24,12 @@ def login_page(request, error=None, info=None, success=None, warning=None):
 		context['warning'] = str(warning)
 	if success:
 		context['success'] = str(success)
+	if request.method == 'POST':
+		print(request.POST)
+		checkLogin = login_user(request)
+		if checkLogin:
+			context = {'title':'Home'}
+			return render(request, 'app/startpage/startpage.html', {'context': context})
 	return render(request, 'app/loginManager/login_base.html', {'context': context, 'formset': LoginForm(auto_id=False)})
 
 #renders our register page
@@ -35,31 +43,51 @@ def register_page(request, error=None, info=None, success=None, warning=None, fo
 		context['warning'] = str(warning)
 	if success:
 		context['success'] = str(success)
-	if form:
-		return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': RegisterForm, 'form': form})
-	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': RegisterForm})
+	if request.method == 'POST':
+		register_user(request)
+		return render(request, 'app/startpage/startpage.html', {'context': context})
+	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': (RegisterForm, updateProfileForm) })
 
 #logins in our user
 def login_user(request):
 	if request.method == 'POST':
-		form = LoginPage(request.POST)
-		if form.is_valid(): 
-			error = "valid"
-			username = form.cleaned_data['username'].lower() #protects against sql injection and converts to lowercase
-			password = form.cleaned_data['password']
-			user = authenticate(username=username, password=password) #Check if username and pass are correct
-			if user:
-				login(request, user) #sets it into session data the logged in user
-				if form.cleaned_data['remember_me']:
-					settings.SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-				return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page'))
-			else:
-				error = "User doesn't exist or invalid password"
-				return login_page(request, error)
+		data = request.POST
+		username = data['username']
+		password = data['password']
+		checkUser = User.objects.get(username=username, password=password)
+		print(checkUser)
+		#user = authenticate(request, username=username, password=password)
+		#print(user)
+		if checkUser:
+			login(request, checkUser) #sets it into session data the logged in user
+			return True
 		else:
-			error = "Form isn't valid"
-			return login_page(request, error)
-	return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page'))
+			error = "User doesn't exist or invalid password"
+			print(error)
+			return False
+
+def register_user(request):
+	if request.method == 'POST':
+		print(request.POST)
+		data = request.POST
+		username = data['username']
+		password = data['password']
+		email = data['email']
+		phoneNumber = data['phoneNumber']
+		about = data['about']
+		addressZip = data['zip']
+		address = data['address']
+		city = data['city']
+		state = data['state']
+		newUser = User.objects.create(username=username, password=password, email=email)
+		newUser.save()
+		print(newUser)
+		if newUser.id:
+			newProfile = Profile.objects.create(user=newUser, phoneNumber=phoneNumber, about=about, zip=addressZip, address=address, city=city, state=state)
+			newProfile.save()
+			print(newProfile)
+			print("success")
+
 
 	# renders our login page
 def forgot_user(request, error=None, info=None, success=None, warning=None, form=None):

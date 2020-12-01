@@ -9,6 +9,10 @@
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link"><b>Browse</b></a></li>
                 <li class="pure-menu-item"><a href="{% url 'login_manager:register_page' %}" class="pure-menu-link"><b>Sign Up</b></a></li>
                 <li class="pure-menu-item"><a href="{% url 'login_manager:login_page' %}" class="pure-menu-link"><b>Sign In</b></a></li>
-				<li class="pure-menu-item"><a href="{% url 'profileManager:profile' %}" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
+                {% if user.is_authenticated %}
+				<li class="pure-menu-item"><a href="{% url 'profileManager:profile' %}" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> {{ user.get_username }} </b></a></li>
+                {% else %}
+                <li class="pure-menu-item"><a href="{% url 'profileManager:profile' %}" class="pure-menu-link"><i class="fa fa-user-circle"></i><b> My Profile</b></a></li>
+                {% endif %}
             </ul>
         </div>

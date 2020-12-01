@@ -10,6 +10,6 @@ urlpatterns = [
 	path('forgot/', views.forgot_user, name='forgot_user'),
 	#path('login/auth/', views.login_user, name='login_user'),
 	#path('user/check/', views.check_userExists, name='check_user'),
-	#path('register/user/', views.register_user, name='register_user'),
+	path('register/user/', views.register_user, name='register_user'),
 	#path('forget/', views.forget_user, name='forget_user'),
 ]
