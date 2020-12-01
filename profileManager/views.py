@@ -20,6 +20,7 @@ def profile(request):
     return render(request, 'app/profileManager/profile.html', context)
 
 
+
 # Update Profile Page Views.
 def updateProfile(request, error=None, info=None, success=None, warning=None):
     context = {'title': 'Home'}
