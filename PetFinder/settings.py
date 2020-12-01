@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'templateholder.apps.TemplateholderConfig',
     'startpage.apps.StartpageConfig',
     'profileManager.apps.ProfilemanagerConfig',
+    'petManager.apps.PetConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,14 +78,8 @@ WSGI_APPLICATION = 'PetFinder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        "CLIENT": {
-            'name': 'petfinder_db',
-            'host': 'mongodb+srv://CollinV:Password54321!@cluster0.uyzl6.mongodb.net/petfinder_db?retryWrites=true&w=majority',
-            'username': 'CollinV',
-            'password': 'Password54321!',
-            "authMechanism": "SCRAM-SHA-1",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
     }
 }

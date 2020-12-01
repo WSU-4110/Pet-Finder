@@ -21,5 +21,6 @@ urlpatterns = [
     path('login/', include('login_manager.urls')),
     path('', include('startpage.urls')),
     path('profile/', include('profileManager.urls')),
-    path('quiz/', include('questionnaireManager.urls'))
+    path('quiz/', include('questionnaireManager.urls')),
+    path('addPet/', include('petManager.urls'))
 ]
