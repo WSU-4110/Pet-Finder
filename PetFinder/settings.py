@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = '28!nu0#_)n2=0l=iq13r0$(h_gyd52sq1&@rp_7+)6y$**mc0#'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,17 +72,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PetFinder.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        "CLIENT": {
+            'name': 'petfinder_db',
+            'host': 'mongodb+srv://CollinV:Password54321!@cluster0.uyzl6.mongodb.net/petfinder_db?retryWrites=true&w=majority',
+            'username': 'CollinV',
+            'password': 'Password54321!',
+            "authMechanism": "SCRAM-SHA-1",
+        },
+
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -104,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -118,17 +120,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-INSTALLED_APPS += ('compressor', )
+INSTALLED_APPS += ('compressor',)
 
 COMPRESS_CSS_FILTERS = [
-    #'django_compressor_autoprefixer.AutoprefixerFilter',
+    # 'django_compressor_autoprefixer.AutoprefixerFilter',
     'compressor.filters.cssmin.CSSMinFilter',
 ]
 
