@@ -25,9 +25,7 @@ class RegisterForm(forms.ModelForm):
 			            'password': forms.PasswordInput(
 			                attrs={'placeholder': 'password'}),
 			        }
-class ForgotForm(forms.Form):
-	forgot_email = forms.EmailField(label='forgot_email', max_length=64, required=True, error_messages={'required': 'Please enter your email'})
-	
+
 
 """
 class LoginPage(forms.Form):

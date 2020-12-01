@@ -60,19 +60,3 @@ def login_user(request):
 			error = "Form isn't valid"
 			return login_page(request, error)
 	return HttpResponseRedirect(reverse('dashboard_kpi:kpi_page'))
-
-	# renders our login page
-def forgot_user(request, error=None, info=None, success=None, warning=None, form=None):
-	context = {'title':'Login'}
-	logout(request)
-	if error:
-		context['error'] = str(error)
-	if info:
-		context['info'] = str(info)
-	if warning:
-		context['warning'] = str(warning)
-	if success:
-		context['success'] = str(success)
-	if form:
-		return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm, 'form': form})
-	return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm})
