@@ -31,10 +31,7 @@ def login_page(request, error=None, info=None, success=None, warning=None):
 			context = {'title':'Home'}
 			return render(request, 'app/startpage/startpage.html', {'context': context})
 	return render(request, 'app/loginManager/login_base.html', {'context': context, 'formset': LoginForm(auto_id=False)}), "login page loaded"
-
-def test_login_page(request):
-	assert login_page(request) == 'login page loaded'
-
+	
 #renders our register page
 def register_page(request, error=None, info=None, success=None, warning=None, form=None):
 	context = {'title':'Register'}
@@ -49,10 +46,7 @@ def register_page(request, error=None, info=None, success=None, warning=None, fo
 	if request.method == 'POST':
 		register_user(request)
 		return render(request, 'app/startpage/startpage.html', {'context': context})
-	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': (RegisterForm, updateProfileForm) }), ""
-
-def test_register_page(request):
-	assert register_page(request) == 'register page loaded'
+	return render(request, 'app/loginManager/register_base.html', {'context': context, 'formset': (RegisterForm, updateProfileForm) }), "register_page_loaded"
 
 #logins in our user
 def login_user(request):
@@ -71,9 +65,6 @@ def login_user(request):
 			error = "User doesn't exist or invalid password"
 			print(error)
 			return False
-
-def test_login_user(request):
-	assert login_user(request) == True
 
 def register_user(request):
 	if request.method == 'POST':
@@ -97,9 +88,6 @@ def register_user(request):
 			print(newProfile)
 			print("success")
 
-def test_register_user(request):
-	assert register_user(request) == "success"
-
 	# renders our login page
 def forgot_user(request, error=None, info=None, success=None, warning=None, form=None):
 	context = {'title':'Login'}
@@ -115,6 +103,3 @@ def forgot_user(request, error=None, info=None, success=None, warning=None, form
 	if form:
 		return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm, 'form': form})
 	return render(request, 'app/loginManager/forgot_base.html', {'context': context, 'formset': ForgotForm}), "success"
-
-def test_forgot_user(request):
-	assert forgot_user(request) == "success"	
