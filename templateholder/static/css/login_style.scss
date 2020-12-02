@@ -10,7 +10,7 @@ h1 {
   height: 100px;
   width: 100%;
   font-size: 18px;
-  background: darken($color, 4%);
+  background: #1f8dd6;
   color: white;
   line-height: 150%;
   border-radius: 3px 3px 0 0;
@@ -58,7 +58,7 @@ input {
 
 button {
   border: none;
-  background: $color;
+  background: #1f8dd6;;
   cursor: pointer;
   border-radius: 3px;
   padding: 6px;

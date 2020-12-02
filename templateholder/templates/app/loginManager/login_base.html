@@ -14,7 +14,7 @@
 <body>
 <form  method="post">
 	{% csrf_token %}
-  <h1>CSS ONLY site Login</h1>
+  <h1>PetFinder Login</h1>
   {{ formset.management_form }}
   {% for form in formset %}
   	{% for field in form %}
