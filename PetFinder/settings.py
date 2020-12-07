@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = '28!nu0#_)n2=0l=iq13r0$(h_gyd52sq1&@rp_7+)6y$**mc0#'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -42,6 +40,7 @@ INSTALLED_APPS = [
     'templateholder.apps.TemplateholderConfig',
     'startpage.apps.StartpageConfig',
     'profileManager.apps.ProfilemanagerConfig',
+    'petManager.apps.PetConfig'
 ]
 
 MIDDLEWARE = [
@@ -74,17 +73,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PetFinder.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
+
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -122,17 +120,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-INSTALLED_APPS += ('compressor', )
+INSTALLED_APPS += ('compressor',)
 
 COMPRESS_CSS_FILTERS = [
-    #'django_compressor_autoprefixer.AutoprefixerFilter',
+    # 'django_compressor_autoprefixer.AutoprefixerFilter',
     'compressor.filters.cssmin.CSSMinFilter',
 ]
 

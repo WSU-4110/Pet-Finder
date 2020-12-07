@@ -12,4 +12,5 @@ urlpatterns = [
 	#path('user/check/', views.check_userExists, name='check_user'),
 	path('register/user/', views.register_user, name='register_user'),
 	#path('forget/', views.forget_user, name='forget_user'),
+	#path('forgot/', views.forgot_username, name='forgot_user'),
 ]

@@ -1,0 +1,45 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+
+								<!-- Profile Pic -->
+<div style="background: #9FE5FF;">
+	on>
+	</div>
+
+
+    <section class="section">
+        <div class ="container">
+            <br><br>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="field">
+                    <div class="control">
+                        {{ form.animal }}<br>
+                        {{ form.breed }}<br>
+                        {{ form.name }}<br>
+                        {{ form.color }}
+                    </div>
+                </div>
+
+                <div class="is-right">
+                    <div class="control">
+                       <button class="pure-button"><a  style="text-decoration: none; color: white;">Add Pet</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+
+
+
+	<div class="footer l-box is-center">
+		CSC 4110/1 Group Project - Pet Finder
+	</div>
+</div>
+{% endblock %}

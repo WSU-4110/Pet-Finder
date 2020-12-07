@@ -1,0 +1,78 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+
+
+<div style="background: #9FE5FF;">
+		<div class="is-center">
+			<br><br><h1><b></i> Take Our Quiz!</b></h1>
+			<h2><b>Animal Type: </b></h2>
+			<label for="animal">Choose the animal type:</label>
+                <select name="animal" id="animal">
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                </select>
+			<h2><b>Energy Level: </b></h2>
+			<label for="energy">Choose energy level you wish your animal to have (1 being low and 9 being high):</label>
+                <select name="energy" id="energy">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+			<h2><b>Shedding Level: </b></h2>
+			<label for="fur">Choose the amount of fur shedding you are okay with (1 being low and 9 being high):</label>
+                <select name="fur" id="fur">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+			<h2><b>Outside Space: </b></h2>
+            <label for="outside">Choose the amount of outdoor space you have available (1 being none and 9 being multiple acres):</label>
+                <select name="outside" id="outside">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+			<br><br>
+            <h2><b>Inside Space: </b></h2>
+            <label for="inside">Choose the amount of indoor space you have available (1 being a studio apartment and 6+ bedroom home):</label>
+                <select name="inside" id="inside">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+			<br><br>
+			<button class="pure-button"><a href="{% url 'profileManager:updateProfile' %}" style="text-decoration: none; color: white;">Submit</a></button>
+            <br><br><br><br><br><br><br><br><br><br>
+	</div>
+
+	<div class="footer l-box is-center" >
+		CSC 4110/1 Group Project - Pet Finder
+	</div>
+</div>
+{% endblock %}
