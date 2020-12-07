@@ -7,6 +7,8 @@
 <div style="background: #9FE5FF;">
 		<div class="is-center">
 			<br><br><h1><b></i> Take Our Quiz!</b></h1>
+            <form  method="post">
+            {% csrf_token %}
 			<h2><b>Animal Type: </b></h2>
 			<label for="animal">Choose the animal type:</label>
                 <select name="animal" id="animal">
@@ -67,7 +69,8 @@
                     <option value="9">9</option>
                 </select>
 			<br><br>
-			<button class="pure-button"><a href="{% url 'profileManager:updateProfile' %}" style="text-decoration: none; color: white;">Submit</a></button>
+			<button class="pure-button" type="submit" style="text-decoration: none; color: white;">Submit</button>
+        </form>
             <br><br><br><br><br><br><br><br><br><br>
 	</div>
 

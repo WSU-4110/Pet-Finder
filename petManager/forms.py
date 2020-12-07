@@ -9,10 +9,11 @@ from .models import *
 class PetForm(forms.ModelForm):
     class Meta:
         model = pets
-        fields = ('animal', 'breed', 'name', 'color')
+        fields = ('animal', 'breed', 'name', 'color', 'pet_img')
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, user, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.user = user
         self.fields['animal'].widget.attrs.update({'class': 'textarea', 'placeholder': 'Enter the type of animal.'})
         self.fields['breed'].widget.attrs.update({'class': 'textarea', 'placeholder': 'Enter the breed of the animal.'})
         self.fields['name'].widget.attrs.update({'class': 'textarea', 'placeholder': 'Enter the name of the animal.'})

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core import serializers
 # from django.core.urlresolvers import reverse
@@ -16,9 +16,10 @@ def profile(request):
     addpet = pets.objects.all()
 
     context = {'addpet': addpet}
-
-    return render(request, 'app/profileManager/profile.html', context)
-
+    if request.user.is_authenticated:
+        return render(request, 'app/profileManager/profile.html', context)
+    else:
+        return redirect('login_manager:login_page')
 
 
 # Update Profile Page Views.
