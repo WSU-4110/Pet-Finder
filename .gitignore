@@ -103,8 +103,8 @@ ENV/
 .mypy_cache/
 
 .DS_Store
-*.sqlite3
-media/
+#*.sqlite3
+#media/
 *.pyc
 *.db
 *.pid
