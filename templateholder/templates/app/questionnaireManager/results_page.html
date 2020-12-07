@@ -1,0 +1,32 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+
+
+<div style="background: #9FE5FF;">
+		<div class="is-center">
+			<h1>Results</h1>
+            {% for pet in petresults %}
+            <div>
+                <img src="{{ pet.pet_img.url }}" class="img-responsive" style="width: 100px;">
+                <label>Animal Type:</label>
+                {{ pet.animal }}
+                <label>Breed:</label>
+                {{ pet.breed }}
+                <label>Pet Name:</label>
+                {{ pet.name }}
+                <label>Pet Color:</label>
+                {{ pet.color }}
+            </div>
+
+            <hr>
+
+            {% endfor %}
+	</div>
+
+	<div class="footer l-box is-center" >
+		CSC 4110/1 Group Project - Pet Finder
+	</div>
+</div>
+{% endblock %}
