@@ -13,7 +13,7 @@ class pets(models.Model):
     name = models.TextField()
     color = models.TextField()
     pet_img = models.ImageField(upload_to='images/', null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return 'pets #{}'.format(self.id)
