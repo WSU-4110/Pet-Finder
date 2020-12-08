@@ -18,6 +18,7 @@
                 {{ pet.name }}
                 <label>Pet Color:</label>
                 {{ pet.color }}
+                <a href="{% url 'profileManager:profile' %}{{ pet.user.id }}">Click Here for Agency Info</a>
             </div>
 
             <hr>

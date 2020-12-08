@@ -9,6 +9,7 @@ from django.conf import settings
 from petManager.models import pets
 
 from .forms import *
+from .models import *
 
 
 # Profile Page Views.
@@ -21,6 +22,10 @@ def profile(request):
     else:
         return redirect('login_manager:login_page')
 
+def agencyinfo(request, user_id):
+    profileData = Profile.objects.get(user=user_id)
+    context = {'title': 'Agency Info'}
+    return render(request, 'app/profileManager/agencyInfo.html', {'context': context, 'profileData': profileData})
 
 # Update Profile Page Views.
 def updateProfile(request, error=None, info=None, success=None, warning=None):

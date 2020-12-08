@@ -1,0 +1,28 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content_wrapper %}
+
+								<!-- Profile Pic -->
+<div style="background: #9FE5FF;">
+	
+		<div class="is-center"> <!-- Profile Content -->
+			<br><br><h1><b><i class="fa fa-user-circle"></i>{{ profileData.about }}</b></h1>
+			<h2><b>Phone Number: </b></h2>
+			<label>{{ profileData.phoneNumber }}</label><br><br>
+			<h2><b>Agency Address: </b></h2>
+			<label>{{ profileData.address }}</label><br><br>
+			<h2><b>Agency City: </b></h2>
+			<label>{{ profileData.city }}</label><br><br>
+			<h2><b>Agency State: </b></h2>
+			<label>{{ profileData.state }}</label><br><br>
+			<h2><b>Agency zipcode: </b></h2>
+			<label>{{ profileData.zip }}</label><br><br>
+
+	</div>
+
+
+
+
+</div>
+{% endblock %}
