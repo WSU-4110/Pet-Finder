@@ -36,6 +36,9 @@ class PetsTestCase(TestCase):
 
 
 
+        
+        
+        
     def test_isnot_instance_of_class(self):
             petstest1 = pets.objects.get(animal="TestAnimal1", breed="TestBreed1", name="TestName1",
                                          color="TestColor1")
