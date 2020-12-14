@@ -1,4 +1,4 @@
-language: python
+language: Python
 
 env: 
  - DJANGO_VERSION=3.1.2.
